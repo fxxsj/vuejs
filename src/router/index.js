@@ -11,14 +11,17 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-    const auth = router.app.$options.store.state.auth
-  
-    if (auth && to.path.indexOf('/auth/') !== -1) {
-      next('/')
-    } else {
-      next()
-    }
-  })
+  const auth = router.app.$options.store.state.auth
+
+  if (
+    (auth && to.path.indexOf('/auth/') !== -1) ||
+    (!auth && to.meta.auth)
+  ) {
+    next('/')
+  } else {
+    next()
+  }
+})
   
 
 export default router
