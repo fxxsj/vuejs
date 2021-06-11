@@ -19,7 +19,7 @@ function validate(el, modifiers, bindingValue) {
           defaultError = `${title}格式不正确`
         }
       } catch (e) {
-          console.log('something wrong')
+          console.log('something wrong');
       }
     }
   
