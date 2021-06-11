@@ -44,4 +44,12 @@ export default [
         }
       ]
     },
+    // Create
+    {
+      path: '/articles/create',
+      name: 'Create',
+      component: () => import('@/views/articles/Create'),
+      meta: { auth: true }
+    },
+  
   ]
